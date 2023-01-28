@@ -4,6 +4,7 @@ const clientSignup = async (req, res) => {
   const data = req.body;
   // remove unwated feild from object
   delete data.cpassword;
+  data.delete=false
   homeUtil
     .doClientSignup(data)
     .then((response) => {

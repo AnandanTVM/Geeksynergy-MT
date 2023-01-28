@@ -31,6 +31,7 @@ const Clientprotect = async (req, res, next) => {
   }
 };
 const adminprotect = async (req, res, next) => {
+  console.log('here');
   let token;
 
   if (
@@ -42,10 +43,12 @@ const adminprotect = async (req, res, next) => {
 
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-      req.user = await CommenHelpers.findClientById(decoded.userId);
+      req.user = await Commenutil.findAdminById(decoded.userId);
 
       next();
     } catch (error) {
+      console.log(error);
+      console.log('failed token');
       res.status(401);
       throw new Error('Not authorized, token fail');
     }

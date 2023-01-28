@@ -7,6 +7,7 @@ const cors = require('cors');
 const db = require('./config/connection');
 const homeRouter = require('./router/home');
 const clientRouter = require('./router/client');
+const adminRouter = require('./router/admin');
 // .env config
 dotenv.config();
 // react cros config
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 // redirects to roughts
 app.use('/api', homeRouter);
 app.use('/api/client', clientRouter);
+app.use('/api/admin', adminRouter);
 
 // data connection call
 db.connect((err) => {

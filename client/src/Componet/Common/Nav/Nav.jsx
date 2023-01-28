@@ -58,9 +58,11 @@ function Nav(props) {
                 )}
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/admin/Login">
+                {props.admin?(<Link className="nav-link active" to="/admin/login">
                   Admin Login
-                </Link>
+                </Link>):(<Link className="nav-link" to="/admin/login">
+                  Admin Login
+                </Link>)}
               </li>
             </ul>
           </div>
