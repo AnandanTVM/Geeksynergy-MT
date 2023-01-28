@@ -1,8 +1,10 @@
 # Geeksynergy-MT
-#Project Overview
+# Project Overview
 This project is a web application that allows users to register and login to the system, as well as perform CRUD operations on user data. The application is built using Node.js, React, and MongoDB.
-
-#Features
+# Screenshots
+![gg2](https://user-images.githubusercontent.com/109457296/215295927-ce1426e3-6e89-4440-b8a8-466068f15fcd.png)
+![g](https://user-images.githubusercontent.com/109457296/215295932-4d47b0ca-4833-4cf9-aaa4-da3ff0a584a7.png)
+# Features
 User registration page using Node.js, where users can input their name, password, email, phone number, and profession. Passwords are saved in an encrypted format for security.
 
 API call to send registration data to the server and display a notification upon receiving a response.
@@ -34,9 +36,7 @@ Start the server
 Copy code
 npm run server
 Go to http://localhost:3000 to view the application
-#Screenshots
-![gg2](https://user-images.githubusercontent.com/109457296/215295927-ce1426e3-6e89-4440-b8a8-466068f15fcd.png)
-![g](https://user-images.githubusercontent.com/109457296/215295932-4d47b0ca-4833-4cf9-aaa4-da3ff0a584a7.png)
+
 
 
 Note
