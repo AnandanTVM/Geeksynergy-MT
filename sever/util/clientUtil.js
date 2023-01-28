@@ -1,7 +1,7 @@
-const bcrypt = require('bcrypt');
-const { ObjectId } = require('mongodb');
-const db = require('../config/connection');
-const collection = require('../config/collection');
+const bcrypt = require("bcrypt");
+const { ObjectId } = require("mongodb");
+const db = require("../config/connection");
+const collection = require("../config/collection");
 
 module.exports = {
   douserLogin: (userData) =>
@@ -25,5 +25,16 @@ module.exports = {
       } else {
         resolve({ status: false });
       }
+    }),
+  updateUserDetails: (id, data) =>
+    new Promise((resolve, reject) => {
+      db.get()
+        .collection(collection.CLIENT_COLLECTION)
+        .updateOne(
+          { _id: id },
+          { $set: { phone: data.phone, email: data.email, name: data.name } }
+        )
+        .then(() => resolve())
+        .catch(() => reject());
     }),
 };

@@ -1,6 +1,6 @@
-const jwt = require('jsonwebtoken');
-const clientUtil = require('../util/clientUtil');
-const commonutil = require('../util/commonutil');
+const jwt = require("jsonwebtoken");
+const clientUtil = require("../util/clientUtil");
+const commonutil = require("../util/commonutil");
 
 const clientLogin = async (req, res) =>
   clientUtil.douserLogin(req.body).then((response) => {
@@ -13,9 +13,9 @@ const clientLogin = async (req, res) =>
         },
         process.env.JWT_SECRET
       );
-      return res.json({ status: 'ok', user: token });
+      return res.json({ status: "ok", user: token });
     }
-    res.json({ status: 'error', user: false });
+    res.json({ status: "error", user: false });
   });
 
 const getProfile = (req, res) =>
@@ -24,7 +24,14 @@ const getProfile = (req, res) =>
     .then((details) => res.json({ status: true, profile: details }))
     .catch((err) => res.json({ status: false, error: err }));
 
+const updateUserDetails = (req, res) =>
+  clientUtil
+    .updateUserDetails(req.user._id, req.body)
+    .then((details) => res.json({ status: true }))
+    .catch((err) => res.json({ status: false }));
+
 module.exports = {
   clientLogin,
   getProfile,
+  updateUserDetails,
 };

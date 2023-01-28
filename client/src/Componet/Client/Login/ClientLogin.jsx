@@ -44,7 +44,7 @@ function ClientLogin() {
                 <form onSubmit={loginUser}>
                   <div className="divider d-flex align-items-center my-4">
                     <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                      Welcome Admin
+                      Welcome Client
                     </p>
                   </div>
                   {error ? (

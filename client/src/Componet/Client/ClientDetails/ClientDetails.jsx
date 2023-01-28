@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
+import { useNavigate } from 'react-router-dom';
 import { getProfile } from '../../../axios/serives/clientsevices';
 
 function ClientDetails() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [details, SetDetails] = useState();
 
   async function fetchData() {
@@ -27,46 +28,25 @@ function ClientDetails() {
       name: 'Phome',
       selector: (row) => row.phone,
     },
-    // {
-    //   name: 'Block/Unblock',
-    //   selector: (row) => {
-    //     return (
-    //       <div>
-    //         {' '}
-    //         {row.block ? (
-    //           <button
-    //             className="btn btn-danger"
-    //             onClick={() => unBlock(row._id)}
-    //           >
-    //             Un Block
-    //           </button>
-    //         ) : (
-    //           <button className="btn btn-danger" onClick={() => Block(row._id)}>
-    //             Block
-    //           </button>
-    //         )}
-    //       </div>
-    //     );
-    //   },
-    // },
-    // {
-    //   name: 'View More',
-    //   selector: (row) => {
-    //     return (
-    //       <div>
-    //         {' '}
-    //         <button
-    //           className="btn btn-info"
-    //           onClick={() => {
-    //             navigate(`/adminClientEdit/${row._id}`);
-    //           }}
-    //         >
-    //           More Details
-    //         </button>
-    //       </div>
-    //     );
-    //   },
-    // },
+    
+    {
+      name: 'Edit Details',
+      selector: (row) => {
+        return (
+          <div>
+            {' '}
+            <button
+              className="btn btn-info"
+              onClick={() => {
+                navigate(`/client/clientEdit/${row._id}`);
+              }}
+            >
+              More Details
+            </button>
+          </div>
+        );
+      },
+    },
   ];
   useEffect(() => {
     fetchData();

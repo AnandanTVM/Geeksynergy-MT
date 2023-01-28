@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
+import React, { Fragment } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
 
-import { E404, Signup, CliLogin, ClientHome } from './Pages';
+import { E404, Signup, CliLogin, ClientHome, ClientEdit } from "./Pages";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
           <Route path="/" element={<Signup />} />
           <Route path="/client/login" element={<CliLogin />} />
           <Route path="/client/home" element={<ClientHome />} />
+          <Route path="/client/clientEdit/:id" element={<ClientEdit />} />
           <Route path="/*" element={<E404 />} />
         </Routes>
       </div>
