@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import jwt from 'jwt-decode';
-import { CLogin, Nav } from '../../Componet';
+import { ClientDetails, ClientMav } from '../../Componet';
 
-export default function ClientLogin() {
-  const navigate = useNavigate('');
+function ClientHome() {
+  const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
       const user = jwt(token);
-
       console.log(user);
-      console.log(token);
-      if (user) {
-        navigate('/client/home');
+      if (!user) {
+        localStorage.removeItem('token');
+        navigate('/client/login');
+      } else {
+        // populateQuote()
       }
     } else {
       navigate('/client/login');
@@ -21,8 +22,10 @@ export default function ClientLogin() {
   }, [navigate]);
   return (
     <div>
-      <Nav CLogin />
-      <CLogin />
+      <ClientMav />
+      <ClientDetails />
     </div>
   );
 }
+
+export default ClientHome;
