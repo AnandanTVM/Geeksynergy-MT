@@ -52,4 +52,16 @@ module.exports = {
           reject();
         });
     }),
+
+    editClientDetails: (id, data) =>
+    new Promise((resolve, reject) => {
+      db.get()
+        .collection(collection.CLIENT_COLLECTION)
+        .updateOne(
+          { _id: ObjectId(id )},
+          { $set: { phone: data.phone, email: data.email, name: data.name } }
+        )
+        .then((e) =>{console.log(e); resolve()})
+        .catch(() => reject());
+    }),
 };

@@ -37,7 +37,7 @@ function AdminNav(props) {
                     <Link
                       className="nav-link active"
                       aria-current="page"
-                      to="/client/home"
+                      to="/admin/home"
                     >
                       Home
                     </Link>
@@ -45,7 +45,7 @@ function AdminNav(props) {
                     <Link
                       className="nav-link "
                       aria-current="page"
-                      to="/client/home"
+                      to="/admin/home"
                     >
                       Home
                     </Link>

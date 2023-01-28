@@ -34,3 +34,40 @@ export const deleteClient = async (token,id) => {
     }
     
   };
+  export const EditUserDetails = async (token,value,id) => {
+    try {
+      const config = {
+        headers: {
+          Accept: 'application/json',
+        Authorization: 'Bearer ' + token,
+          'Content-Type': 'application/json',
+        },
+      };
+      const { data } = await axiosAdminInstance.post(
+        `/editUserDetails/${id}`,
+        value,
+        config
+      );
+      return data;
+    } catch (error) {
+      return error;
+    }
+  };
+  export const getDetalsById = async (token,id) => {
+ 
+    try {
+        const config = {
+            headers: {
+              Accept: 'application/json',
+              Authorization: 'Bearer ' + token,
+              'Content-Type': 'application/json',
+            },
+          };
+          const { data } = await axiosAdminInstance.get(`/getClientDetailsById/${id}`, config);
+          
+            return data;
+    } catch (error) {
+        return error
+    }
+    
+  };

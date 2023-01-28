@@ -31,7 +31,6 @@ const Clientprotect = async (req, res, next) => {
   }
 };
 const adminprotect = async (req, res, next) => {
-  console.log('here');
   let token;
 
   if (

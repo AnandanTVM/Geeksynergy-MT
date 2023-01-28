@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const INITIAL_STATE = {
-  alldetails: '',
+  alldetails: "",
 };
 
 const detailsSlice = createSlice({
@@ -9,14 +9,13 @@ const detailsSlice = createSlice({
   initialState: INITIAL_STATE,
   reducers: {
     addUserDetails: (state, action) => {
-        console.log('here');
-        let { alldetails } = state;
+      console.log("here");
+      let { alldetails } = state;
 
-        alldetails = action.payload;
-  
-        return { ...state, alldetails };
+      alldetails = action.payload;
+
+      return { ...state, alldetails };
     },
-    delete: () => {},
   },
 });
 

@@ -7,4 +7,5 @@ export { default as CEdit } from './Client/ClientEdit/ClientEdit';
 export { default as ALogin } from './Admin/AdminLogin/AdminLogin';
 export { default as Anav } from './Admin/AdminNav/AdminNav';
 export { default as AdminDetails } from './Admin/AdminUserDetails/AdminUserDetails';
+export { default as Aedit } from './Admin/AdminEdit/AdminEdit';
 export { default as Error } from './Common/Error/Error';

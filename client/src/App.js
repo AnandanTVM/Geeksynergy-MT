@@ -24,7 +24,7 @@ function App() {
           <Route path="/client/clientEdit/:id" element={<ClientEdit />} />
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/home" element={<AdminHome />} />
-          <Route path="/admin/clientEdit/:id" element={<AdminEdit />} />
+          <Route path="/admin/adminEdit/:id" element={<AdminEdit />} />
           <Route path="/*" element={<E404 />} />
         </Routes>
       </div>

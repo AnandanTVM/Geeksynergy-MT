@@ -29,9 +29,22 @@ const deleteclient = (req, res) =>
     .deleteClient(req.params.id)
     .then(() => res.json({ status: true }))
     .catch((err) => res.json({ status: true, error: err }));
+const getClientDetailsById = (req, res) =>
+  commonutil
+    .findClientById(req.params.id)
+    .then((data) => res.json({ status: true, ClientDetails: data }))
+    .catch((err) => res.json({ status: true, error: err }));
 
+const editClientDetails = (req, res) =>{
+  console.log(req.body);
+  adminUtil
+    .editClientDetails(req.params.id, req.body)
+    .then((details) => res.json({ status: true }))
+    .catch((err) => res.json({ status: false }));}
 module.exports = {
   adminLogin,
   getAllClientDetails,
   deleteclient,
+  getClientDetailsById,
+  editClientDetails,
 };

@@ -20,10 +20,12 @@ module.exports = {
   findClientById: (userId) =>
     new Promise(async (resolve, reject) => {
       try {
+        console.log('api');
         const user = await db
           .get()
           .collection(collection.CLIENT_COLLECTION)
           .findOne({ _id: ObjectId(userId) });
+          console.log(user);
 
         resolve(user);
       } catch (err) {

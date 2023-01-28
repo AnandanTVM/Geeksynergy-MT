@@ -1,8 +1,12 @@
 import React from 'react'
+import { Aedit, Anav } from '../../Componet'
 
 function AdminEdit() {
   return (
-    <div>AdminEdit</div>
+    <div>
+      <Anav />
+      <Aedit />
+    </div>
   )
 }
 
